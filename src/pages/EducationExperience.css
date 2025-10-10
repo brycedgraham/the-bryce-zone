@@ -1,0 +1,358 @@
+/* Education & Experience Page Styles */
+
+.edu-exp-page {
+  max-width: 1000px;
+  margin: 0 auto;
+  animation: fadeIn 0.5s ease;
+}
+
+/* Page Header */
+.page-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding: 2rem 1rem;
+}
+
+.page-header h1 {
+  font-size: 2.5rem;
+  margin: 0 0 1.5rem;
+  background: linear-gradient(135deg, #4ecdc4 0%, #44a08d 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+}
+
+.page-quote {
+  font-size: 1.1rem;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-left: 4px solid #4ecdc4;
+  border-radius: 8px;
+  line-height: 1.6;
+}
+
+.page-quote cite {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+  color: #4ecdc4;
+  font-style: normal;
+}
+
+/* Section */
+.section {
+  margin-bottom: 4rem;
+}
+
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.section-icon {
+  font-size: 2rem;
+}
+
+.section-title h2 {
+  font-size: 2rem;
+  margin: 0;
+  color: #fff;
+  font-weight: 600;
+}
+
+/* Timeline for Experience */
+.timeline {
+  position: relative;
+  padding-left: 2rem;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(180deg, #4ecdc4 0%, rgba(78, 205, 196, 0.3) 100%);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 3rem;
+  padding-left: 2rem;
+}
+
+.timeline-marker {
+  position: absolute;
+  left: -2rem;
+  top: 0.5rem;
+  width: 16px;
+  height: 16px;
+  background: #4ecdc4;
+  border: 3px solid #1a1a2e;
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px rgba(78, 205, 196, 0.2);
+}
+
+.timeline-content {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.timeline-content:hover {
+  transform: translateX(8px);
+  border-color: rgba(78, 205, 196, 0.3);
+  box-shadow: 0 8px 30px rgba(78, 205, 196, 0.15);
+}
+
+/* Experience Header */
+.experience-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+  gap: 1rem;
+}
+
+.experience-header h3 {
+  font-size: 1.5rem;
+  margin: 0 0 0.5rem;
+  color: #4ecdc4;
+  font-weight: 600;
+}
+
+.company-name {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 500;
+}
+
+.experience-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.25rem;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.6);
+  text-align: right;
+}
+
+.period {
+  color: #4ecdc4;
+  font-weight: 500;
+}
+
+/* Description List */
+.description-list {
+  margin: 1.5rem 0;
+  padding-left: 1.5rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.description-list li {
+  margin-bottom: 0.75rem;
+  line-height: 1.6;
+}
+
+.description-list li:last-child {
+  margin-bottom: 0;
+}
+
+/* Tech Stack */
+.tech-stack {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.tech-stack strong {
+  color: #4ecdc4;
+}
+
+/* Education Grid */
+.education-grid {
+  display: grid;
+  gap: 2rem;
+}
+
+.education-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.education-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(78, 205, 196, 0.3);
+  box-shadow: 0 8px 30px rgba(78, 205, 196, 0.15);
+}
+
+.edu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.75rem;
+  gap: 1rem;
+}
+
+.edu-header h3 {
+  font-size: 1.5rem;
+  margin: 0;
+  color: #4ecdc4;
+  font-weight: 600;
+}
+
+.edu-period {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.6);
+  white-space: nowrap;
+}
+
+.edu-degree {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 0.75rem;
+  font-weight: 500;
+}
+
+.edu-details {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.edu-gpa {
+  color: #4ecdc4;
+  font-weight: 500;
+}
+
+.edu-highlights {
+  margin: 1rem 0 0;
+  padding-left: 1.5rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.edu-highlights li {
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+}
+
+/* Resume CTA */
+.resume-cta {
+  text-align: center;
+  padding: 3rem 1rem;
+  margin-top: 3rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.resume-cta p {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 1.5rem;
+}
+
+.contact-button {
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  background: linear-gradient(135deg, #4ecdc4 0%, #44a08d 100%);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(78, 205, 196, 0.3);
+}
+
+.contact-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(78, 205, 196, 0.4);
+  filter: brightness(1.1);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .page-header h1 {
+    font-size: 2rem;
+  }
+
+  .page-quote {
+    font-size: 1rem;
+    padding: 1rem;
+  }
+
+  .section-title h2 {
+    font-size: 1.5rem;
+  }
+
+  .timeline {
+    padding-left: 1.5rem;
+  }
+
+  .timeline-item {
+    padding-left: 1.5rem;
+  }
+
+  .timeline-marker {
+    left: -1.6rem;
+  }
+
+  .timeline-content {
+    padding: 1.5rem;
+  }
+
+  .experience-header {
+    flex-direction: column;
+  }
+
+  .experience-meta {
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .edu-header {
+    flex-direction: column;
+  }
+
+  .edu-details {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .timeline-content,
+  .education-card {
+    padding: 1.25rem;
+  }
+
+  .experience-header h3,
+  .edu-header h3 {
+    font-size: 1.25rem;
+  }
+
+  .description-list,
+  .edu-highlights {
+    font-size: 0.95rem;
+  }
+}

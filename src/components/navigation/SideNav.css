@@ -1,59 +1,203 @@
-body {
-  margin: 0;
-  color: white;
-}
-
-/* The side navigation menu */
+/* Modern Sidebar Navigation */
 .sidebar {
-  margin: 0;
-  padding: 0;
-  width: 151px;
-  background-color: #555;
   position: fixed;
-  height: 100%;
-  overflow: auto;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 240px;
+  background: linear-gradient(180deg, #1a1a2e 0%, #16213e 100%);
+  padding: 0;
+  margin: 0;
+  overflow-y: auto;
+  z-index: 1000;
+  box-shadow: 4px 0 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
 }
 
-/* Sidebar links */
+.sidebar-header {
+  padding: 2rem 1.5rem 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sidebar-header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: 0.5px;
+}
+
+.nav-list {
+  list-style: none;
+  padding: 1rem 0;
+  margin: 0;
+}
+
+.nav-list li {
+  margin: 0;
+}
+
 .sidebar a {
-  display: block;
-  color: white;
-  padding: 16px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+  color: rgba(255, 255, 255, 0.8);
   text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  border-left: 3px solid transparent;
+  position: relative;
 }
 
-/* Active/current link */
+.sidebar a::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 0;
+  background: rgba(255, 255, 255, 0.05);
+  transition: width 0.2s ease;
+}
+
+.sidebar a:hover::before {
+  width: 100%;
+}
+
+.sidebar a:hover {
+  color: #fff;
+  transform: translateX(4px);
+}
+
 .sidebar a.active {
-  background-color: black;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border-left-color: #4ecdc4;
+  font-weight: 600;
 }
 
-/* Links on mouse-over */
-.sidebar a:hover:not(.active) {
-  background-color: black;
-  color: white;
+.nav-icon {
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 24px;
 }
 
-/* On screens that are less than 700px wide, make the sidebar into a topbar */
-@media screen and (max-width: 700px) {
+.nav-label {
+  flex: 1;
+}
+
+/* Mobile Menu Button */
+.mobile-menu-btn {
+  display: none;
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 1001;
+  background: #1a1a2e;
+  border: none;
+  border-radius: 8px;
+  padding: 0.75rem;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease;
+}
+
+.mobile-menu-btn:hover {
+  background: #16213e;
+  transform: scale(1.05);
+}
+
+.hamburger {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: #fff;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.hamburger::before,
+.hamburger::after {
+  content: '';
+  position: absolute;
+  width: 24px;
+  height: 2px;
+  background: #fff;
+  transition: all 0.3s ease;
+}
+
+.hamburger::before {
+  top: -8px;
+}
+
+.hamburger::after {
+  top: 8px;
+}
+
+.hamburger.open {
+  background: transparent;
+}
+
+.hamburger.open::before {
+  transform: rotate(45deg);
+  top: 0;
+}
+
+.hamburger.open::after {
+  transform: rotate(-45deg);
+  top: 0;
+}
+
+/* Sidebar Overlay */
+.sidebar-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  backdrop-filter: blur(2px);
+}
+
+/* Tablet and Mobile Responsive */
+@media screen and (max-width: 768px) {
+  .mobile-menu-btn {
+    display: block;
+  }
+
   .sidebar {
-    width: 100%;
-    height: auto;
-    position: relative;
+    transform: translateX(-100%);
   }
-  .sidebar a {
-    float: left;
+
+  .sidebar.open {
+    transform: translateX(0);
   }
-  div.content {
-    margin-left: 0;
+
+  .sidebar-overlay {
+    display: block;
   }
 }
 
-/* On screens that are less than 400px, display the bar vertically, instead of horizontally */
-@media screen and (max-width: 400px) {
-  .sidebar a {
-    text-align: center;
-    float: none;
-    font-size: 1em;
-    padding: 0.3em;
-  }
+/* Scrollbar styling */
+.sidebar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 3px;
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
 }
