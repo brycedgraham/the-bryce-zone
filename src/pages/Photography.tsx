@@ -11,7 +11,7 @@ const Photography = () => (
       (Tap or click to enlarge)
     </div>
     <FlickrLightBox
-      api_key={import.meta.env.VITE_FLICKR_API_KEY ?? ""}
+      api_key="f9f0e2a4521bcd27d66dc1a26760b665"
       user_id="181987773@N05"
       album_id="72157709095461753"
       initialBatchSize={30}
