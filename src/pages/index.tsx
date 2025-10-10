@@ -1,5 +1,6 @@
 import React from "react"
 import "./Home.css"
+import GoodreadsQuotesWidget from "../components/GoodreadsQuotesWidget"
 
 const Home = () => (
   <div className="home-page">
@@ -105,6 +106,9 @@ const Home = () => (
           <span className="explore-arrow">→</span>
         </a>
       </div>
+    </section>
+    <section>
+      <GoodreadsQuotesWidget />
     </section>
   </div>
 )
