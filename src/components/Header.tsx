@@ -6,29 +6,14 @@ interface HeaderProps {
 }
 
 const Header = ({ siteTitle = "" }: HeaderProps) => (
-  <header
-    style={{
-      background: `#0d300b`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
+  <header className="site-header">
+    <div className="header-content">
+      <h1 className="site-title">
+        <Link to="/">
           {siteTitle}
         </Link>
       </h1>
+      <div className="header-accent"></div>
     </div>
   </header>
 )

@@ -1,65 +1,50 @@
-import React from "react"
+import React, { useState } from "react"
+import "./Book.css"
 
 interface BookProps {
   path: string
   title: string
   quote: string
-  onHover: () => void
-  offHover: () => void
 }
 
-interface BookState {
-  clicked: boolean
-}
+const Book = ({ path, title, quote }: BookProps) => {
+  const [isHovered, setIsHovered] = useState(false)
+  const [showQuote, setShowQuote] = useState(false)
 
-class Book extends React.Component<BookProps, BookState> {
-  constructor(props: BookProps) {
-    super(props)
-    this.state = { clicked: false }
-  }
-
-  onClick = () => this.setState(prevState => ({ clicked: !prevState.clicked }))
-  onMouseEnter = () => this.props.onHover()
-
-  onMouseLeave = () => this.props.offHover()
-
-  render() {
-    const { path, title, quote } = this.props
-
-    const popUpMessageStyle: React.CSSProperties = {
-      width: "100%",
-      backgroundColor: "rgba(0,0,0,0.7)",
-      position: "absolute",
-      left: "200px",
-      margin: "-200px",
-      padding: "1em",
-      textAlign: "center",
-    }
-
-    return (
-      <div>
-        <div
-          className="book-cover-flex-item"
-          onMouseEnter={this.onMouseEnter}
-          onMouseLeave={this.onMouseLeave}
-          onClick={this.onClick}
-        >
-          <img src={path} alt={title}></img>
-        </div>
-        {this.state.clicked ? (
-          <div
-            className="mobile-quote"
-            style={popUpMessageStyle}
-            onClick={this.onClick}
-          >
-            <p>{quote}</p>
+  return (
+    <div className="book-container">
+      <div
+        className={`book-card ${isHovered ? "hovered" : ""}`}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+        onClick={() => setShowQuote(!showQuote)}
+      >
+        <div className="book-cover">
+          <img src={path} alt={title} loading="lazy" />
+          <div className="book-overlay">
+            <div className="book-title">{title}</div>
+            <div className="book-hint">Click for quote</div>
           </div>
-        ) : (
-          ""
-        )}
+        </div>
       </div>
-    )
-  }
+
+      {showQuote && (
+        <div className="quote-modal" onClick={() => setShowQuote(false)}>
+          <div className="quote-content" onClick={(e) => e.stopPropagation()}>
+            <button
+              className="quote-close"
+              onClick={() => setShowQuote(false)}
+              aria-label="Close quote"
+            >
+              ×
+            </button>
+            <h3>{title}</h3>
+            <blockquote>{quote}</blockquote>
+          </div>
+        </div>
+      )}
+    </div>
+  )
 }
 
 export default Book

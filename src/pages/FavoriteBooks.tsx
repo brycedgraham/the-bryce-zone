@@ -1,40 +1,30 @@
 import React from "react"
 import Book from "../components/Book"
-import "./favorite-books.css"
-import MyBooks from "../components/BookInfo"
+import bookInfo from "../data/BookInfo"
+import "./FavoriteBooks.css"
 
-interface FavoriteBooksState {
-  SelectedBookQuote: string
-}
+const FavoriteBooks = () => {
+  return (
+    <div className="favorite-books-page">
+      <div className="page-header">
+        <h1>Favorite Books</h1>
+        <p className="page-subtitle">
+          A collection of books that have shaped my perspective and imagination
+        </p>
+      </div>
 
-class FavoriteBooks extends React.Component<{}, FavoriteBooksState> {
-  constructor(props: {}) {
-    super(props)
-    this.state = { SelectedBookQuote: "" }
-  }
-
-  render() {
-    const { SelectedBookQuote } = this.state
-    const bookComponents = MyBooks.map((b, index) => (
-      <Book
-        key={index}
-        path={b.path}
-        title={b.title}
-        quote={b.quote}
-        onHover={() => this.setState({ SelectedBookQuote: b.quote })}
-        offHover={() => this.setState({ SelectedBookQuote: "" })}
-      />
-    ))
-    return (
-      <>
-        <div style={{ fontSize: ".8em" }}>
-          (Hover or tap for deep, insightful wisdom)
-        </div>
-        <div className="book-cover-flex-container">{bookComponents}</div>
-        <div>{SelectedBookQuote === "" ? "" : SelectedBookQuote}</div>
-      </>
-    )
-  }
+      <div className="books-grid">
+        {bookInfo.map((book) => (
+          <Book
+            key={book.title}
+            path={book.path}
+            title={book.title}
+            quote={book.quote}
+          />
+        ))}
+      </div>
+    </div>
+  )
 }
 
 export default FavoriteBooks
