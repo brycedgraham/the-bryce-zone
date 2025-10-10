@@ -1,9 +1,8 @@
 import React from "react"
-import Layout from "../components/layout"
 import FlickrLightBox from "../components/FlickrLightbox"
 
 const Photography = () => (
-  <Layout>
+  <>
     <h4>
       “Logic will get you from A to Z; imagination will get you everywhere.” ―
       Albert Einstein
@@ -16,7 +15,7 @@ const Photography = () => (
       user_id="181987773@N05"
       album_id="72157709095461753"
     />
-  </Layout>
+  </>
 )
 
 export default Photography

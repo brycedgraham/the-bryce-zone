@@ -1,10 +1,10 @@
 import React from "react"
-import Header from "./header"
+import Header from "./Header"
 import "./layout.css"
-// import Nav from "./Nav"
 import SideNav from "./navigation/SideNav"
+import { Outlet } from "react-router-dom"
 
-const Layout = ({ children }) => (
+const Layout = () => (
   <div>
     <SideNav />
     <div className="main">
@@ -12,12 +12,13 @@ const Layout = ({ children }) => (
       <div
         style={{
           margin: `0 auto`,
-          // maxWidth: 960,
           padding: `0px 1.0875rem 1.45rem`,
           paddingTop: 0,
         }}
       >
-        <main style={{ marginBottom: "26px" }}>{children}</main>
+        <main style={{ marginBottom: "26px" }}>
+          <Outlet />
+        </main>
         <footer
           style={{
             width: "100%",
@@ -28,7 +29,7 @@ const Layout = ({ children }) => (
         >
           © {new Date().getFullYear()}, Built with
           {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
+          <a href="https://www.vitejs.dev">Vite</a>
         </footer>
       </div>
     </div>

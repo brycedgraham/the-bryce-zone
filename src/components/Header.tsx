@@ -1,8 +1,11 @@
-import { Link } from "gatsby"
-import PropTypes from "prop-types"
+import { Link } from "react-router-dom"
 import React from "react"
 
-const Header = ({ siteTitle }) => (
+interface HeaderProps {
+  siteTitle: string
+}
+
+const Header = ({ siteTitle }: HeaderProps) => (
   <header
     style={{
       background: `#0d300b`,
@@ -12,7 +15,6 @@ const Header = ({ siteTitle }) => (
     <div
       style={{
         margin: `0 auto`,
-        // maxWidth: 960,
         padding: `1.45rem 1.0875rem`,
       }}
     >
@@ -30,10 +32,6 @@ const Header = ({ siteTitle }) => (
     </div>
   </header>
 )
-
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
 
 Header.defaultProps = {
   siteTitle: ``,

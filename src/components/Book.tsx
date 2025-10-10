@@ -1,7 +1,19 @@
 import React from "react"
 
-class FavoriteBooks extends React.Component {
-  constructor(props) {
+interface BookProps {
+  path: string
+  title: string
+  quote: string
+  onHover: () => void
+  offHover: () => void
+}
+
+interface BookState {
+  clicked: boolean
+}
+
+class Book extends React.Component<BookProps, BookState> {
+  constructor(props: BookProps) {
     super(props)
     this.state = { clicked: false }
   }
@@ -14,15 +26,11 @@ class FavoriteBooks extends React.Component {
   render() {
     const { path, title, quote } = this.props
 
-    const popUpMessageStyle = {
+    const popUpMessageStyle: React.CSSProperties = {
       width: "100%",
-      // height: "100%",
       backgroundColor: "rgba(0,0,0,0.7)",
       position: "absolute",
-      // top: "0",
-      // bottom: "0",
       left: "200px",
-      // right: "0",
       margin: "-200px",
       padding: "1em",
       textAlign: "center",
@@ -54,4 +62,4 @@ class FavoriteBooks extends React.Component {
   }
 }
 
-export default FavoriteBooks
+export default Book

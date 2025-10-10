@@ -1,4 +1,10 @@
-const BookInfo = [
+interface BookInfo {
+  title: string
+  path: string
+  quote: string
+}
+
+const bookInfo: BookInfo[] = [
   {
     title: "Dune",
     path: "/images/BookCovers/DuneCover.jpg",
@@ -140,4 +146,4 @@ const BookInfo = [
   },
 ]
 
-export default BookInfo
+export default bookInfo

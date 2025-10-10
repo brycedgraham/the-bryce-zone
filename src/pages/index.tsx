@@ -1,13 +1,12 @@
 import React from "react"
-import Layout from "../components/layout"
 
-const linkImageStyle = {
+const linkImageStyle: React.CSSProperties = {
   width: "100px",
   marginBottom: 0,
 }
 
 export default () => (
-  <Layout>
+  <>
     <h1>Greetings Fellow Sapients</h1>
     <p>
       Welcome to a quick glimpse into the life, hobbies and skills of Bryce
@@ -42,5 +41,5 @@ export default () => (
         </a>
       </div>
     </fieldset>
-  </Layout>
+  </>
 )

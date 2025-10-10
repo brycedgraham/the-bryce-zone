@@ -1,9 +1,8 @@
 import React from "react"
-import Layout from "../components/layout"
 import "./toolbox.css"
 
 const Toolbox = () => (
-  <Layout>
+  <>
     <h4>
       "It is a mistake to think you can solve any major problems just with
       potatoes." - Douglas Adams
@@ -35,7 +34,7 @@ const Toolbox = () => (
       <div className="toolbox-flex-item">GitLab</div>
       <div className="toolbox-flex-item">SVN</div>
     </div>
-  </Layout>
+  </>
 )
 
 export default Toolbox

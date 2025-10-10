@@ -2,12 +2,24 @@ import React, { useState } from "react"
 import Gallery from "react-photo-gallery"
 import Carousel, { Modal, ModalGateway } from "react-images"
 
-export default function GalleryLightbox(props) {
+interface Photo {
+  src: string
+  srcSet?: string[]
+  title?: string
+  width: number
+  height: number
+}
+
+interface GalleryLightboxProps {
+  photos: Photo[]
+}
+
+export default function GalleryLightbox(props: GalleryLightboxProps) {
   const { photos } = props
   const [currentImage, setCurrentImage] = useState(0)
   const [viewerIsOpen, setViewerIsOpen] = useState(false)
 
-  const openLightbox = (event, obj) => {
+  const openLightbox = (event: any, obj: any) => {
     setCurrentImage(obj.index)
     setViewerIsOpen(true)
   }

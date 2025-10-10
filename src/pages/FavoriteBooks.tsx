@@ -1,11 +1,14 @@
 import React from "react"
-import Layout from "../components/layout"
 import Book from "../components/Book"
 import "./favorite-books.css"
 import MyBooks from "../components/BookInfo"
 
-class FavoriteBooks extends React.Component {
-  constructor(props) {
+interface FavoriteBooksState {
+  SelectedBookQuote: string
+}
+
+class FavoriteBooks extends React.Component<{}, FavoriteBooksState> {
+  constructor(props: {}) {
     super(props)
     this.state = { SelectedBookQuote: "" }
   }
@@ -23,13 +26,13 @@ class FavoriteBooks extends React.Component {
       />
     ))
     return (
-      <Layout>
+      <>
         <div style={{ fontSize: ".8em" }}>
           (Hover or tap for deep, insightful wisdom)
         </div>
         <div className="book-cover-flex-container">{bookComponents}</div>
         <div>{SelectedBookQuote === "" ? "" : SelectedBookQuote}</div>
-      </Layout>
+      </>
     )
   }
 }

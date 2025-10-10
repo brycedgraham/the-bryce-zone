@@ -1,8 +1,7 @@
 import React from "react"
-import Layout from "../components/layout"
 
 const Education = () => (
-  <Layout>
+  <>
     <h4>
       "If I have seen further than others, it is by standing upon the shoulders
       of giants." - Isaac Newton
@@ -18,7 +17,7 @@ const Education = () => (
     <div>
       Bachelor's Degree in Physics, minor in Computer Science and Informatics
     </div>
-  </Layout>
+  </>
 )
 
 export default Education
