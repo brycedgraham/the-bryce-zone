@@ -107,7 +107,8 @@ const Home = () => (
         </a>
       </div>
     </section>
-    <section>
+    <section className="explore-section">
+      <h2>Words That Inspire Me</h2>
       <GoodreadsQuotesWidget />
     </section>
   </div>
