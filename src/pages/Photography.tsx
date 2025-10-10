@@ -14,7 +14,9 @@ const Photography = () => (
       api_key={import.meta.env.VITE_FLICKR_API_KEY ?? ""}
       user_id="181987773@N05"
       album_id="72157709095461753"
-      perPage={30}
+      initialBatchSize={30}
+      batchSize={15}
+      // pageSize={30}
     />
   </>
 )
