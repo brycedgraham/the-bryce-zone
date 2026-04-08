@@ -5,9 +5,10 @@ interface BookProps {
   path: string
   title: string
   quote: string
+  goodreads?: string
 }
 
-const Book = ({ path, title, quote }: BookProps) => {
+const Book = ({ path, title, quote, goodreads }: BookProps) => {
   const [isHovered, setIsHovered] = useState(false)
   const [showQuote, setShowQuote] = useState(false)
 
@@ -42,6 +43,11 @@ const Book = ({ path, title, quote }: BookProps) => {
             <blockquote>{quote}</blockquote>
           </div>
         </div>
+      )}
+      {goodreads && (
+        <a href={goodreads} target="_blank" rel="noopener noreferrer">
+          View on Goodreads
+        </a>
       )}
     </div>
   )

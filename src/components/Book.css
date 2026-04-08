@@ -9,7 +9,7 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   border-radius: 8px;
   overflow: hidden;
-  height: 100%;
+  height: auto;
 }
 
 .book-card.hovered {
@@ -20,7 +20,7 @@
 .book-cover {
   position: relative;
   width: 100%;
-  height: 100%;
+  height: auto;
   overflow: hidden;
   border-radius: 8px;
   background: #1a1a2e;
@@ -28,10 +28,8 @@
 
 .book-cover img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
   display: block;
-  transition: transform 0.3s ease, filter 0.3s ease;
 }
 
 .book-card:hover .book-cover img {

@@ -20,6 +20,7 @@ const FavoriteBooks = () => {
             path={book.path}
             title={book.title}
             quote={book.quote}
+            goodreads={book.goodreads}
           />
         ))}
       </div>
