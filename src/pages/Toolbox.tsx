@@ -18,6 +18,8 @@ const Toolbox = () => {
       title: "Languages & Frameworks",
       icon: "💻",
       skills: [
+        { name: "Linux" },
+        { name: "Docker" },
         { name: "C#" },
         { name: "JavaScript" },
         { name: "TypeScript" },
@@ -54,6 +56,7 @@ const Toolbox = () => {
       skills: [
         { name: "AWS" },
         { name: "IIS" },
+        { name: "Azure TFS" },
       ],
     },
     {
@@ -71,6 +74,9 @@ const Toolbox = () => {
       icon: "🔌",
       skills: [
         { name: "REST APIs" },
+        { name: "JSON / XML" },
+        { name: "Swagger / OpenAPI" },
+        { name: "CI/CD" },
         { name: "Windows PowerShell" },
       ],
     },
