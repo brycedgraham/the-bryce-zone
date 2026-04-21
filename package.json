@@ -1,7 +1,7 @@
 {
   "name": "the-bryce-zone",
   "private": true,
-  "description": "A simplified bare-bones starter for Gatsby",
+  "description": "A modern, high-performance React application powered by Vite",
   "version": "0.1.0",
   "license": "MIT",
   "scripts": {
@@ -9,7 +9,7 @@
     "build": "tsc && vite build",
     "preview": "vite preview",
     "format": "prettier --write src/**/*.{js,jsx}",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
+    "test": "echo \"Write tests! -> https://vitejs.dev/guide/features.html\""
   },
   "dependencies": {
     "@trendmicro/react-sidenav": "^0.4.5",
@@ -20,24 +20,17 @@
     "react-dom": "^18.2.0",
     "react-grid-gallery": "^1.0.1",
     "react-images": "^1.1.0-beta.0",
-    "react-photo-gallery": "^8.0.0",
     "react-router-dom": "^6.22.3",
     "yet-another-react-lightbox": "^3.25.0"
   },
   "devDependencies": {
     "@types/node": "^24.7.1",
-    "@types/react": "^19.2.2",
-    "@types/react-dom": "^19.2.1",
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
     "@vitejs/plugin-react": "^5.0.4",
     "prettier": "^1.19.1",
     "typescript": "^5.9.3",
     "vite": "^7.1.9"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-hello-world"
-  },
-  "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
   }
 }
+
